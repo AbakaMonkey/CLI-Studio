@@ -1,0 +1,26 @@
+* {
+  margin: 0%;
+  background-color: black;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.commandLine {
+  display: flex;
+  gap: 5px;
+  height: 23px;
+  width: 100%;
+  border-bottom: solid white 2px;
+}
+
+#command {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+#command:focus {
+  outline: none;
+}
