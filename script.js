@@ -12,6 +12,7 @@ const HOT_CROSS_BUNS = ['D4 2', 'C4 2', 'Bb3 1', 'D4 2', 'C4 2', 'Bb3 1', 'Bb3 4
 const MARY_LITTLE_LAMB = ['D4 4', 'C4 4', 'Bb3 4', 'C4 4', 'D4 4', 'D4 4', 'D4 2', 'C4 4', 'C4 4', 'C4 2', 'D4 4', 'F4 4', 'F4 2', 'D4 4', 'C4 4', 'Bb3 4', 'C4 4', 'D4 4', 'D4 4', 'D4 4', 'D4 4', 'C4 4', 'C4 4', 'D4 4', 'C4 4', 'Bb3 1']
 const FLY_ME_TO_MOON = ['C4 4','B3 4','A3 4','G3 8','F3 2','G3 8','A3 4','C4 4','A3 16','A#3 16','B3 4','A3 4','G3 4','F3 8','E3 8','E3 1','A3 4','G3 4','F3 4','E3 8','D3 2','E3 8','F3 4','A3 8','G#3 3','F3 4','E3 4','D3 8','C3 1']
 const MD_THEME = ['D4 8','A4 8','E4 8','F4 8','D4 8','A4 8','E4 8','F4 8','C#4 8','A4 8','E4 8','F4 8','Bb4 8','A4 8','G4 8','F4 8','D4 8','A4 8','E4 8','F4 8','D4 8','A4 8','E4 8','F4 8','C#4 8','A4 8','E4 8','F4 8','Bb4 8','A4 8','G4 8','F4 8']
+const INTERSTELLAR_BUT_BAD = ['A3 4','E4 2','A3 4','E4 2','Bb3 4','E4 2','Bb3 4','E4 2','C4 4','E4 2','C4 4','E4 2','D4 4','E4 2','D4 4','E4 4','Bb3 4']
 
 function newOutput(fstring) {
   const NEW_OUTPUT = document.createElement('p');
@@ -106,6 +107,13 @@ CMD_PROMPT.addEventListener('keydown', function (event) {
         } else {
           newOutput(`Demo ready! Run "export" to play`);
         }
+      } else if (arg1 === `INTERSTELLAR_BUT_BAD`) {
+        notes = INTERSTELLAR_BUT_BAD;
+        if (arg2 === "-now") {
+          playNotes();
+        } else {
+          newOutput(`Demo ready! Run "export" to play`);
+        }
       } else {
         newOutput(`Invalid demo track: ${arg1}`);
       }
@@ -117,6 +125,7 @@ CMD_PROMPT.addEventListener('keydown', function (event) {
       newOutput(`MARY_LITTLE_LAMB`);
       newOutput(`FLY_ME_TO_MOON`);
       newOutput(`MD_THEME`);
+      newOutput(`INTERSTELLAR_BUT_BAD`);
     } else {
       newOutput(`Unknown command: \"${command}\"`)
     }
